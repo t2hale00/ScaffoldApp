@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -116,7 +117,8 @@ fun ScreenTopBar(title: String, navController: NavController) {
 @Composable
 fun MainScreen(navController: NavController) {
     Scaffold(
-        topBar = { MainTopBar(title = "My App", navController )}
+        topBar = { MainTopBar(title = "My App", navController )},
+        bottomBar = { BottomAppBar { Text(text = "Bottom Bar") } }
         ) {
         innerPadding ->
         Column (
@@ -164,6 +166,7 @@ fun SettingScreen(navController: NavController) {
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
